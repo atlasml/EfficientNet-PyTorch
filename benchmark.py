@@ -27,7 +27,7 @@ def benchmark():
     )
     
     input_transform = transforms.Compose([
-        transforms.Resize(272, 'PIL.Image.BICUBIC'),
+        transforms.Resize(272, PIL.Image.BICUBIC),
         transforms.CenterCrop(240),
         transforms.ToTensor(),
         normalize,

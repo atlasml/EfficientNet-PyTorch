@@ -4,13 +4,13 @@ from efficientnet_pytorch.model import EfficientNet
 from sotabench.image_classification import imagenet
 
 import torchvision.transforms as transforms
-import PIL
+from PIL import Image
 
 def benchmark():
     
     normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     input_transform = transforms.Compose([
-        transforms.Resize(256, 'PIL.Image.BICUBIC'),
+        transforms.Resize(256, PIL.Image.BICUBIC),
         transforms.CenterCrop(224),
         transforms.ToTensor(),
         normalize,

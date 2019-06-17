@@ -1,4 +1,4 @@
-dependencies = ['torch', 'torchvision']
+dependencies = ['scipy', 'torch', 'torchvision']
 
 from efficientnet_pytorch.model import EfficientNet
 from sotabench.image_classification import imagenet

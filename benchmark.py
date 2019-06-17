@@ -22,5 +22,6 @@ def benchmark():
         paper_arxiv_id='1905.11946',
         paper_pwc_id='efficientnet-rethinking-model-scaling-for',
         input_transform=input_transform,
-        batch_size=32
+        batch_size=64,
+        num_gpu=2
     )

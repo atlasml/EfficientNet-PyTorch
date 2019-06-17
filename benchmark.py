@@ -18,28 +18,10 @@ def benchmark():
     
     imagenet.benchmark(
         model=EfficientNet.from_pretrained(model_name='efficientnet-b0'),
-        paper_model_name='EfficientNet B0',
+        paper_model_name='EfficientNet',
         paper_arxiv_id='1905.11946',
         paper_pwc_id='efficientnet-rethinking-model-scaling-for',
         input_transform=input_transform,
         batch_size=256,
         num_gpu=1
     )
-    
-    input_transform = transforms.Compose([
-        transforms.Resize(272, PIL.Image.BICUBIC),
-        transforms.CenterCrop(240),
-        transforms.ToTensor(),
-        normalize,
-    ])
-    
-    imagenet.benchmark(
-        model=EfficientNet.from_pretrained(model_name='efficientnet-b1'),
-        paper_model_name='EfficientNet B1',
-        paper_arxiv_id='1905.11946',
-        paper_pwc_id='efficientnet-rethinking-model-scaling-for',
-        input_transform=input_transform,
-        batch_size=256,
-        num_gpu=1
-    )
-    

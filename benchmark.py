@@ -4,7 +4,7 @@ from efficientnet_pytorch.model import EfficientNet
 from sotabench.image_classification import imagenet
 
 import torchvision.transforms as transforms
-
+from PIL import Image
 
 def benchmark():
     

@@ -3,6 +3,9 @@ dependencies = ['scipy', 'torch', 'torchvision']
 from efficientnet_pytorch.model import EfficientNet
 from sotabench.image_classification import imagenet
 
+import torchvision.transforms as transforms
+
+
 def benchmark():
     
     normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])

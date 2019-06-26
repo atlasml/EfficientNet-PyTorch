@@ -1,5 +1,5 @@
 from efficientnet_pytorch.model import EfficientNet
-from sotabench.image_classification import imagenet
+from sotabench.image_classification import ImageNet
 import torchvision.transforms as transforms
 import PIL
 
@@ -13,7 +13,7 @@ input_transform = transforms.Compose([
 ])
 
 # Run Evaluation
-imagenet.benchmark(
+ImageNet.benchmark(
     model=EfficientNet.from_pretrained(model_name='efficientnet-b0'),
     paper_model_name='EfficientNet',
     paper_arxiv_id='1905.11946',

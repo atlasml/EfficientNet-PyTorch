@@ -61,13 +61,21 @@ ImageNet.benchmark(
     num_gpu=1
 )
 
+# Define Transforms    
+b3_input_transform = transforms.Compose([
+    transforms.Resize(332, PIL.Image.BICUBIC),
+    transforms.CenterCrop(300),
+    transforms.ToTensor(),
+    normalize,
+])
+
 # Run Evaluation
 ImageNet.benchmark(
     model=EfficientNet.from_pretrained(model_name='efficientnet-b3'),
     paper_model_name='EfficientNet-B3',
     paper_arxiv_id='1905.11946',
     paper_pwc_id='efficientnet-rethinking-model-scaling-for',
-    input_transform=b1_input_transform,
+    input_transform=b3_input_transform,
     batch_size=256,
     num_gpu=1
 )
